@@ -8,11 +8,11 @@
         </div>
 
         <div class="row" >
-
+ <no-ssr>
           <v-gallery :images="images"
            :index="index"
            @close="index = null" />
-
+ </no-ssr>
           <div class="col-6 col-md-4 mb-3" v-for="item in slice.items" :key="item.id" @click="index = item.id">
             
               <img :src="item.gallery_image.url" alt="Image" class="rounded" >
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+
+
 
 export default {
   props: ['slice'],
