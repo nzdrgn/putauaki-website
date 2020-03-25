@@ -131,18 +131,7 @@
                     data-style="bottomleft"
                     style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"
                   >
-                    <div class="grecaptcha-logo">
-                      <iframe
-                        src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=INSERT_YOUR_RECAPTCHA_V2_SITEKEY_HERE&amp;co=aHR0cDovL2xvY2FsaG9zdDozMDEw&amp;hl=en&amp;v=vJuUWXolyYJx1oqUVmpPuryQ&amp;size=invisible&amp;badge=bottomleft&amp;cb=s08dhtn733ch"
-                        width="256"
-                        height="60"
-                        role="presentation"
-                        name="a-4jgx34hzzo4e"
-                        frameborder="0"
-                        scrolling="no"
-                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
-                      ></iframe>
-                    </div>
+                    
                     <div class="grecaptcha-error"></div>
                     <textarea
                       id="g-recaptcha-response"
