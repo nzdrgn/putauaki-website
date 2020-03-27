@@ -12,7 +12,7 @@ import PrismicConfig from "~/prismic.config.js"
 export default {
   name: 'Preview',
   async asyncData({ query, redirect }) {
-    let previewToken = query.token
+    let previewToken = query.token    
     const api = await Prismic.getApi(PrismicConfig.apiEndpoint)
     const url = await api.previewSession(previewToken, LinkResolver, '/')
     redirect(url)

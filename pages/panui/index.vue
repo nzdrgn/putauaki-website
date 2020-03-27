@@ -43,7 +43,7 @@ export default {
       // Query to get blog home content
       const document = await api.getSingle('panui_home')
       let pageContent = document.data
-      console.log(document.data)
+
      
         // Query to get posts content to preview
       const panuiPosts = await api.query(

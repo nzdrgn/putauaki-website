@@ -73,5 +73,11 @@ module.exports = {
       }     
       
     }
+  },
+
+  generate: {
+    exclude: [
+      /^(?=.*\bPreview\b).*$/
+    ]
   }
 }

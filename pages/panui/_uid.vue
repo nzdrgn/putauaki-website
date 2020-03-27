@@ -32,7 +32,7 @@ export default {
       // Query to get post content
       const post = await api.getByUID("panui", params.uid)
 
-      console.log(post.data.body)
+
 
       // Load the edit button
       if (process.client) window.prismic.setupEditButton()

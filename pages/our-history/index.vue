@@ -40,7 +40,7 @@ export default {
       // Query to get blog home content
       const document = await api.getSingle('our_history')
       let pageContent = document.data
-     console.log(pageContent)
+
     
 
       // Load the edit button
