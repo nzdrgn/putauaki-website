@@ -78,6 +78,7 @@ module.exports = {
   generate: {
     exclude: [
       /^(?=.*\bPreview\b).*$/
-    ]
+    ],
+    fallback: '404.html'    
   }
 }
