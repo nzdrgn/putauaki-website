@@ -15,6 +15,7 @@ export default {
     let previewToken = query.token    
     const api = await Prismic.getApi(PrismicConfig.apiEndpoint)
     const url = await api.previewSession(previewToken, LinkResolver, '/')
+    console.log("url: " + url)
     redirect(url)
   },
 }

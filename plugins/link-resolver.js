@@ -5,6 +5,7 @@
 export default function (doc) {
 
 
+
   if (doc.isBroken) {
     return '/not-found'
   }
@@ -31,11 +32,11 @@ export default function (doc) {
   }
 
   if (doc.type === 'geothermal') {
-    return '/'
+    return '/geothermal'
   }
 
   if (doc.type === 'grants') {
-    return '/geothermal'
+    return '/grants'
   }
 
   if (doc.type === 'himiona-dairy-farm') {

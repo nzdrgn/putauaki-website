@@ -33,7 +33,6 @@ export default {
       const document = await api.getSingle('about_us')
       let pageContent = document.data
      
-    
 
       // Load the edit button
       if (process.client) window.prismic.setupEditButton()
