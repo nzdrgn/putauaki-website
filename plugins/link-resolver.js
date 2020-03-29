@@ -14,12 +14,12 @@ export default function (doc) {
     return '/'
   }
 
-  if (doc.type === 'about-us') {
+  if (doc.type === 'about_us') {
     return '/about-us'
   }
 
 
-  if (doc.type === 'contact-us') {
+  if (doc.type === 'contact_us') {
     return '/contact-us'
   }
 
@@ -39,7 +39,7 @@ export default function (doc) {
     return '/grants'
   }
 
-  if (doc.type === 'himiona-dairy-farm') {
+  if (doc.type === 'himiona_dairy_farm') {
     return '/himiona-dairy-farm'
   }
 
@@ -51,11 +51,11 @@ export default function (doc) {
     return '/management'
   }
 
-  if (doc.type === 'our-history') {
+  if (doc.type === 'our_history') {
     return '/our-history'
   }
 
-  if (doc.type === 'putauaki-dairy-farm') {
+  if (doc.type === 'putauaki_dairy_farm') {
     return '/putauaki-dairy-farm'
   }
 
@@ -63,11 +63,11 @@ export default function (doc) {
     return '/reports'
   }
 
-  if (doc.type === 'shareholder-information') {
+  if (doc.type === 'shareholder_information') {
     return '/shareholder-information'
   }
 
-  if (doc.type === 'shareholder-registry') {
+  if (doc.type === 'shareholder_registry') {
     return '/shareholder-registry'
   }
 

@@ -17,7 +17,7 @@ import SlicesBlock from '~/components/SlicesBlock.vue'
 import PageTitle from '~/components/PageTitle.vue'
 
 export default {
-  name: 'Home',
+  name: 'our-history',
    components: {
     SlicesBlock,
     PageTitle

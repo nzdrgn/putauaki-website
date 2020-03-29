@@ -13,7 +13,7 @@ import SlicesBlock from '~/components/SlicesBlock.vue'
 import PageTitle from '~/components/PageTitle.vue'
 
 export default {
-  name: 'Home',
+  name: 'about-us',
    components: {
     SlicesBlock,
     PageTitle
@@ -32,7 +32,7 @@ export default {
       // Query to get blog home content
       const document = await api.getSingle('about_us')
       let pageContent = document.data
-     
+     console.log(pageContent)
 
       // Load the edit button
       if (process.client) window.prismic.setupEditButton()

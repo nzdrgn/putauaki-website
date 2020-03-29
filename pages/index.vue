@@ -9,7 +9,7 @@ import PrismicConfig from "~/prismic.config.js"
 import SlicesBlock from '~/components/SlicesBlock.vue'
 
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
     SlicesBlock,
   },

@@ -23,7 +23,7 @@ import PageTitle from '~/components/PageTitle.vue'
 import PanuiWidget from '~/components/PanuiWidget.vue'
 
 export default {
-  name: 'Home',
+  name: 'panui-home',
    components: {
     SlicesBlock,
     PageTitle,

@@ -13,7 +13,7 @@ import PageTitle from '~/components/PageTitle.vue'
 import FilesTable from '~/components/FilesTable.vue'
 
 export default {
-  name: 'Home',
+  name: 'reports',
    components: {
     SlicesBlock,
     PageTitle,

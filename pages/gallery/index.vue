@@ -13,7 +13,7 @@ import SlicesBlock from '~/components/SlicesBlock.vue'
 import PageTitle from '~/components/PageTitle.vue'
 
 export default {
-  name: 'Home',
+  name: 'gallery',
    components: {
     SlicesBlock,
     PageTitle
