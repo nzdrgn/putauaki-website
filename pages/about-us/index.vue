@@ -32,7 +32,7 @@ export default {
       // Query to get blog home content
       const document = await api.getSingle('about_us')
       let pageContent = document.data
-     console.log(pageContent)
+
 
       // Load the edit button
       if (process.client) window.prismic.setupEditButton()
