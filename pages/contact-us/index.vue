@@ -71,59 +71,26 @@
               <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
               </p>
             </div>
-            <form name="contact" method="POST" data-netlify="true"  data-netlify-honeypot="bot-field">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Your Name *</label>
-                    <input name="contact-name" type="text" class="form-control" required>
-                    <div class="invalid-feedback">
-                      Please type your name.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Email Address *</label>
-                    <input name="contact-email" type="email" placeholder="you@yoursite.com" class="form-control" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Company Name</label>
-                    <input name="contact-company" type="text" class="form-control" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Contact Number</label>
-                    <input name="contact-phone" type="tel" class="form-control" required>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-group">
-                    <label>Message:</label>
-                    <textarea class="form-control" name="contact-message" rows="10" placeholder="How can we help?"></textarea>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div data-recaptcha data-sitekey="INSERT_YOUR_RECAPTCHA_V2_SITEKEY_HERE"></div>
-                </div>
-                <div class="col">
-                  <div class="d-none alert alert-success" role="alert" data-success-message>
-                    Thanks, a member of our team will be in touch shortly.
-                  </div>
-                  <div class="d-none alert alert-danger" role="alert" data-error-message>
-                    Please fill all fields correctly.
-                  </div>
-                  <input type="hidden" name="form-name" value="ask-question" />
-                  <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Sending">
-                    <img class="icon" src="assets/img/icons/theme/code/loading.svg" alt="loading icon" data-inject-svg />
-                    <span>Send Enquiry</span>
-                  </button>
-                </div>
-              </div>
-            </form>
+            <form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>   
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
 
           </div>
         </div>
