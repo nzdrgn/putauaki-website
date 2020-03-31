@@ -20,7 +20,7 @@ export default {
   },
   head () {
     return {
-        titleTemplate: '%s - ' + "About Us"
+        titleTemplate: '%s - ' + "Shareholder Information"
     }
   },
   async asyncData({context, error, req}) {
@@ -29,7 +29,7 @@ export default {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {req})
 
       // Query to get blog home content
-      const document = await api.getSingle('about_us')
+      const document = await api.getSingle('shareholder_information')
       let pageContent = document.data
       
 

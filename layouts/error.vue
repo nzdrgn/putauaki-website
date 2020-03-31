@@ -22,7 +22,7 @@ export default {
   layout: 'default',
   head () {
     return {
-      title: 'Prismic Nuxt.js Blog',
+      title: 'Putauaki Trust - Error',
     }
   },
 }
