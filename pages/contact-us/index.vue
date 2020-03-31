@@ -71,7 +71,7 @@
               <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
               </p>
             </div>
-            <form data-form-email novalidate netlify>
+            <form name="contact" method="POST" data-netlify="true">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
