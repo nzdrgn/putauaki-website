@@ -71,7 +71,7 @@
               <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
               </p>
             </div>
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" data-netlify="true"    data-netlify-honeypot="bot-field">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -116,6 +116,7 @@
                   <div class="d-none alert alert-danger" role="alert" data-error-message>
                     Please fill all fields correctly.
                   </div>
+                  <input type="hidden" name="form-name" value="ask-question" />
                   <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Sending">
                     <img class="icon" src="assets/img/icons/theme/code/loading.svg" alt="loading icon" data-inject-svg />
                     <span>Send Enquiry</span>
