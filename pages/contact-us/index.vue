@@ -71,26 +71,35 @@
               <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
               </p>
             </div>
-            <form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+            <form
+        name="vue-tea"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="vue-tea" />
+        <div class="tea">
+          <h2>Pick a Tea</h2>
+          <label
+            v-for="tea in teaNames"
+            :key="tea"
+            :class="{
+              'tea-label': true,
+              checked: tea === chosenTea
+            }"
+          >
+            <input
+              id="tea"
+              v-model="chosenTea"
+              name="tea"
+              type="radio"
+              :value="tea"
+            />
+            <span>{{ tea }}</span>
+          </label>
+        </div>
+        <button>Submit</button>
+      </form>
 
           </div>
         </div>
@@ -138,6 +147,29 @@ export default {
     } catch (e) {
       // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
+    }
+  },
+  data() {
+    return {
+      chosenTea: 'Earl Grey',
+      teaTypes: {
+        'Earl Grey': 'London',
+        'Irish Breakfast': 'Dublin',
+        Chai: 'Bombay',
+        Rose: 'Atlantic City',
+        Matcha: 'Tokyo',
+        Rooibos: 'Cape Town',
+        'Yerba Mate': 'Montreal',
+        Green: 'Oregon Mist'
+      }
+    }
+  },
+   computed: {
+    teaName() {
+      return `${this.teaTypes[this.chosenTea]} Fog`
+    },
+    teaNames() {
+      return Object.keys(this.teaTypes)
     }
   }
 }
