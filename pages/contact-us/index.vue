@@ -71,35 +71,61 @@
               <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
               </p>
             </div>
-            <form
-        name="vue-tea"
+            <form name="contact-form"
         method="post"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="vue-tea" />
-        <div class="tea">
-          <h2>Pick a Tea</h2>
-          <label
-            v-for="tea in teaNames"
-            :key="tea"
-            :class="{
-              'tea-label': true,
-              checked: tea === chosenTea
-            }"
-          >
-            <input
-              id="tea"
-              v-model="chosenTea"
-              name="tea"
-              type="radio"
-              :value="tea"
-            />
-            <span>{{ tea }}</span>
-          </label>
-        </div>
-        <button>Submit</button>
-      </form>
+        data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-form" />
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Your Name *</label>
+                    <input name="contact-name" type="text" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Please type your name.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Email Address *</label>
+                    <input name="contact-email" type="email" placeholder="you@yoursite.com" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Company Name</label>
+                    <input name="contact-company" type="text" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Contact Number</label>
+                    <input name="contact-phone" type="tel" class="form-control" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Message:</label>
+                    <textarea class="form-control" name="contact-message" rows="10" placeholder="How can we help?"></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  
+                </div>
+                <div class="col">
+                  <div class="d-none alert alert-success" role="alert">
+                    Thanks, a member of our team will be in touch shortly.
+                  </div>
+                  <div class="d-none alert alert-danger" role="alert" >
+                    Please fill all fields correctly.
+                  </div>
+                  <button class="btn btn-primary btn-loading" >
+                    <span>Send Enquiry</span>
+                  </button>
+                </div>
+              </div>
+            </form>
 
           </div>
         </div>
@@ -147,29 +173,6 @@ export default {
     } catch (e) {
       // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
-    }
-  },
-  data() {
-    return {
-      chosenTea: 'Earl Grey',
-      teaTypes: {
-        'Earl Grey': 'London',
-        'Irish Breakfast': 'Dublin',
-        Chai: 'Bombay',
-        Rose: 'Atlantic City',
-        Matcha: 'Tokyo',
-        Rooibos: 'Cape Town',
-        'Yerba Mate': 'Montreal',
-        Green: 'Oregon Mist'
-      }
-    }
-  },
-   computed: {
-    teaName() {
-      return `${this.teaTypes[this.chosenTea]} Fog`
-    },
-    teaNames() {
-      return Object.keys(this.teaTypes)
     }
   }
 }
