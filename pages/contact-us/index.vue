@@ -9,21 +9,19 @@
           <div class="col-sm-4 mb-3 mb-sm-0">
             <h3 class="h2">Visit</h3>
             <span class="lead">
-              389 Greenpoint Ave
-              <br>Crown Heights, Brooklyn
-              <br>New York
+              <prismic-rich-text  :field="pageContent.office_address"/>
             </span>
           </div>
           <div class="col-sm-4 mb-3 mb-sm-0">
             <h3 class="h2">Email</h3>
-            <a href="#" class="lead">hello@company.io</a>
+            <a :href="'mailto:' + pageContent.email" class="lead">{{pageContent.email}}</a>
           </div>
           <div class="col-sm-4 mb-3 mb-sm-0">
             <h3 class="h2">Call</h3>
             <span class="lead">
-              +61 4728 3928
+              {{ pageContent.phone }}
             </span>
-            <div class="text-small text-muted">Mon - Fri, 9am - 5pm</div>
+            <div class="text-small text-muted">{{ pageContent.hours }}</div>
           </div>
         </div>
       </div>
@@ -32,32 +30,13 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <div class="min-vh-50 w-100 rounded shadow-3d" data-marker-image="assets/img/map-marker-2.svg" data-maps-api-key="INSERT_YOUR_GOOGLE_MAPS_API_KEY_HERE" data-address="389 Greenpoint Ave, Crown Heights, Brooklyn New York" data-map-zoom="14">
-              <div class="map-marker" data-address="389 Greenpoint Ave, Crown Heights, Brooklyn New York">
-                <div class="info-window" data-max-width="400">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-12">
-                        <h5>Infowindows in Leap</h5>
-                      </div>
-                      <div class="col-4">
-                        <img alt="Leap Logo" class="w-100" src="assets/img/logo.svg">
-                      </div>
-                      <div class="col-8 pb-2">
-                        <p>
-                          We've made infowindows easy in Leap, so you can use any HTML in this infowindow on your map.
-                        </p>
-                        <h6 class="mb-0">Address</h6>
-                        <address>
-                          389 Greenpoint Ave Crown Heights, Brooklyn New York
-                        </address>
-                        <a target="_blank" href="#">... More Info</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <gmap-map :center="position"  :zoom="15">
+      <gmap-marker
+        
+        :position="position"
+
+      />
+    </gmap-map>
           </div>
         </div>
       </div>
@@ -68,7 +47,7 @@
           <div class="col-md-9 col-lg-8 col-xl-6">
             <div class="text-center mb-4">
               <h2 class="h1">Leave a message</h2>
-              <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+              <p class="lead">Please fill the form in below and we will contact you as soon as possible.
               </p>
             </div>
             <form name="contact-form"
@@ -160,6 +139,7 @@ export default {
       const document = await api.getSingle('contact_us')
       let pageContent = document.data
       
+      const position = { "lat": pageContent.location.latitude, "lng": pageContent.location.longitude }
 
       // Load the edit button
       if (process.client) window.prismic.setupEditButton()
@@ -168,12 +148,23 @@ export default {
       return {
         pageContent,
         documentId: document.id,
-        slices: document.data.body
+        slices: document.data.body,
+        position
+        
       }
     } catch (e) {
+      console.log(e)
       // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.vue-map-container {
+  height: 450px;
+  max-width: 992px;
+  width: 100%;
+}
+</style>
