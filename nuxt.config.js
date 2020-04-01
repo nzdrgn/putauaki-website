@@ -3,6 +3,7 @@ const PrismicConfig = require('./prismic.config')
 
 module.exports = {
   mode: 'universal',
+  VUE_APP_GOOGLE_MAPS_API_KEY: process.env.VUE_APP_GOOGLE_MAPS_API_KEY
 
   /*
   ** Headers of the page
