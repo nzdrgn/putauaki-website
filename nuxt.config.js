@@ -46,14 +46,15 @@ module.exports = {
     '~/plugins/link-resolver.js',
     '~/plugins/html-serializer.js',
     '~/plugins/prismic-vue.js',
-    '~plugins/vue-gallery.client.js'
+    '~/plugins/vue-gallery.client.js',
+    '~/plugins/google-maps'
   ],
 
   /*
   ** Nuxt.js modules
   */
 
- modules: ['bootstrap-vue/nuxt'],
+ modules: ['bootstrap-vue/nuxt','@nuxtjs/dotenv'],
  bootstrapVue: {
    bootstrapCSS: false, // Or `css: false`
    bootstrapVueCSS: false // Or `bvCSS: false`
@@ -76,9 +77,6 @@ module.exports = {
   },
 
   generate: {
-    exclude: [
-      /^(?=.*\bPreview\b).*$/
-    ],
     fallback: '404.html'    
   }
 }
