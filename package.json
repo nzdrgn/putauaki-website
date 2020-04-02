@@ -22,6 +22,7 @@
     "prismic-javascript": "^2.1.5",
     "prismic-vue": "git+https://github.com/prismicio/prismic-vue.git#nuxt",
     "vue-gallery": "^2.0.1",
+    "vue-good-table": "^2.19.1",
     "vue-parallax-js": "^0.2.3",
     "vue-parallaxy": "^1.1.1",
     "vue-scrollmonitor": "^0.1.0",

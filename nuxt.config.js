@@ -51,7 +51,8 @@ module.exports = {
     '~/plugins/html-serializer.js',
     '~/plugins/prismic-vue.js',
     '~/plugins/vue-gallery.client.js',
-    '~/plugins/google-maps'
+    '~/plugins/google-maps',
+    '~/plugins/vue-good-table' 
   ],
 
   /*

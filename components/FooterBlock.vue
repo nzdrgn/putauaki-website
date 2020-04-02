@@ -199,6 +199,8 @@
 <script>
 export default {
   name: "FooterBlock"
+  
 };
 </script>
+
 
