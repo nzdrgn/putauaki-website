@@ -4,8 +4,7 @@
 </template>
 
 <script>
-import Prismic from "prismic-javascript"
-import PrismicConfig from "~/prismic.config.js"
+
 import SlicesBlock from '~/components/SlicesBlock.vue'
 
 export default {
@@ -18,27 +17,27 @@ export default {
       title: 'Putauaki Trust',
     }
   },
-  async asyncData({context, error, req}) {
+  	
+async asyncData({ $prismic, error }) {
     try{
-      // Query to get API object
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {req})
 
-      // Query to get blog home content
-      const document = await api.getSingle('home')
-      let homepageContent = document.data
 
-      
-      // Load the edit button
-      if (process.client) window.prismic.setupEditButton()
+      // Here we query blog home content using $prismic which
+			// has the api endpoint data from the nuxt.config.js
+      const homepageContent = (await $prismic.api.getSingle('home')).data
+     
+           // Query to get the page content
+      const pageContent = (await $prismic.api.getSingle('home')).data
+
 
       // Returns data to be used in template
       return {
-        homepageContent,
-        documentId: document.id,
-        slices: document.data.body
+        pageContent,
+        slices: pageContent.body
       }
     } catch (e) {
       // Returns error page
+
       error({ statusCode: 404, message: 'Page not found' })
     }
   }

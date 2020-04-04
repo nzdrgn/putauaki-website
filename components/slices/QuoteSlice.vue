@@ -5,7 +5,7 @@
         <div class="col-xl-7 col-lg-8 col-md-10">
           <blockquote class="bg-primary-alt">
             <div class="h3 mb-2">
-            {{ $prismic.richTextAsPlain(slice.primary.quote) }}
+            {{ $prismic.asText(slice.primary.quote) }}
             </div>
             </blockquote>
         </div>

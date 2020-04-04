@@ -16,8 +16,7 @@
 </template>
 
 <script>
-import Prismic from "prismic-javascript"
-import PrismicConfig from "~/prismic.config.js"
+
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import PageTitle from '~/components/PageTitle.vue'
 import PanuiWidget from '~/components/PanuiWidget.vue'
@@ -35,30 +34,22 @@ export default {
         titleTemplate: '%s - ' + "Panui"
     }
   },
-  async asyncData({context, error, req}) {
+  async asyncData({ $prismic, error }) {
     try{
-      // Query to get API object
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {req})
 
-      // Query to get blog home content
-      const document = await api.getSingle('panui_home')
-      let pageContent = document.data
+      // Query to get the home page content
+      const pageContent = (await $prismic.api.getSingle('panui_home')).data
 
-     
-        // Query to get posts content to preview
-      const panuiPosts = await api.query(
-        Prismic.Predicates.at("document.type", "panui"),
+      const panuiPosts = await $prismic.api.query(
+        $prismic.predicates.at("document.type", "panui"),
         { orderings : '[my.panui.date desc]' }
       )
 
-      // Load the edit button
-      if (process.client) window.prismic.setupEditButton()
+
 
       // Returns data to be used in template
       return {
         pageContent,
-        documentId: document.id,
-        slices: document.data.body,
         panuiEntries: panuiPosts.results
       }
     } catch (e) {

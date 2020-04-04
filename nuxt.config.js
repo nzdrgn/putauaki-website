@@ -1,5 +1,5 @@
 const pkg = require('./package')
-const PrismicConfig = require('./prismic.config')
+
 
 module.exports = {
   mode: 'universal',
@@ -21,14 +21,7 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       
-    ],
-    script: [
-
-      { innerHTML: '{ window.prismic = { endpoint: "' + PrismicConfig.apiEndpoint + '"} }' },
-      { src: '//static.cdn.prismic.io/prismic.min.js' }
-
-    ],
-    __dangerouslyDisableSanitizers: ['script']
+    ]
   },
 
   /*
@@ -47,9 +40,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/link-resolver.js',
-    '~/plugins/html-serializer.js',
-    '~/plugins/prismic-vue.js',
+
     '~/plugins/vue-gallery.client.js',
     '~/plugins/google-maps',
     '~/plugins/vue-good-table' 
@@ -59,11 +50,26 @@ module.exports = {
   ** Nuxt.js modules
   */
 
- modules: ['bootstrap-vue/nuxt','@nuxtjs/dotenv'],
+ modules: [
+   'bootstrap-vue/nuxt',
+   '@nuxtjs/dotenv',   	
+    // modules for full static before `nuxt export` (coming in v2.12)
+    '@/modules/static',
+    '@/modules/crawler',
+    // This is where you import the new plugin
+    '@nuxtjs/prismic'
+  ],
  bootstrapVue: {
    bootstrapCSS: false, // Or `css: false`
    bootstrapVueCSS: false // Or `bvCSS: false`
  },
+
+ // This is where you configure your settings for the new plugin
+ prismic: {
+  endpoint: 'https://putauaki-website.prismic.io/api/v2',
+  linkResolver: '@/plugins/link-resolver',
+  htmlSerializer: '@/plugins/html-serializer',
+},
 
   /*
   ** Build configuration

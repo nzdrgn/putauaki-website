@@ -10,8 +10,8 @@
       <div class="row my-3"></div>
       <div class="row my-4 my-md-6">
         <div class="col-lg-9 col-xl-8">
-          <h1 class="display-4">{{$prismic.richTextAsPlain(this.title)}}</h1>
-          <p class="lead mb-0">{{$prismic.richTextAsPlain(this.description)}}</p>
+          <h1 class="display-4">{{$prismic.asText(this.title)}}</h1>
+          <p class="lead mb-0">{{$prismic.asText(this.description)}}</p>
         </div>
       </div>
     </div>

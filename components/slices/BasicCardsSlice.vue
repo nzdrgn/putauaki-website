@@ -11,9 +11,9 @@
                 </a>
                 <div class="card-body d-flex flex-column">
                   <a :href="item.card_link">
-                    <h4>{{$prismic.richTextAsPlain(item.card_title)}}</h4>
+                    <h4>{{$prismic.asText(item.card_title)}}</h4>
                   </a>
-                  <p class="flex-grow-1">{{$prismic.richTextAsPlain(item.card_text)}}</p>
+                  <p class="flex-grow-1">{{$prismic.asText(item.card_text)}}</p>
                 </div>
               </div>
             </div>

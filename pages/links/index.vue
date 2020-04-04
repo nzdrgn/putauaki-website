@@ -7,8 +7,7 @@
 </template>
 
 <script>
-import Prismic from "prismic-javascript"
-import PrismicConfig from "~/prismic.config.js"
+
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import PageTitle from '~/components/PageTitle.vue'
 
@@ -23,24 +22,17 @@ export default {
         titleTemplate: '%s - ' + "About Us"
     }
   },
-  async asyncData({context, error, req}) {
+  async asyncData({ $prismic, error }) {
     try{
-      // Query to get API object
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {req})
 
-      // Query to get blog home content
-      const document = await api.getSingle('about_us')
-      let pageContent = document.data
+      // Query to get the home page content
+      const pageContent = (await $prismic.api.getSingle('links')).data
+
       
-
-      // Load the edit button
-      if (process.client) window.prismic.setupEditButton()
-
       // Returns data to be used in template
       return {
         pageContent,
-        documentId: document.id,
-        slices: document.data.body
+        slices: pageContent.body
       }
     } catch (e) {
       // Returns error page

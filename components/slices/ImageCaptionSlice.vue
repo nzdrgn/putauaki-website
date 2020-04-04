@@ -9,7 +9,7 @@
 
                  <figure>
       <img :src="img.url" alt="Image" class="rounded">
-      <figcaption>{{$prismic.richTextAsPlain(caption)}}</figcaption>
+      <figcaption>{{$prismic.asText(caption)}}</figcaption>
     </figure>
 
           </div>

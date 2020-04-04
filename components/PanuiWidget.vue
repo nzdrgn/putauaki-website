@@ -8,7 +8,7 @@
    
               <div class="card-body d-flex flex-column">
                 
-                  <h4>{{ $prismic.richTextAsPlain(panui.data.title) }}</h4>
+                  <h4>{{ $prismic.asText(panui.data.title) }}</h4>
                 
                 <p class="flex-grow-1">
                  {{getFirstParagraph(panui)}}

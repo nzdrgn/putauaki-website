@@ -22,5 +22,6 @@ export default {
       title: 'Putauaki Trust'
     }
   }
+
 }
 </script>

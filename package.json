@@ -1,7 +1,7 @@
 {
-  "name": "blog-nuxt",
+  "name": "putauaki-trust",
   "version": "1.0.0",
-  "description": "A simple blog for Nuxt and Vue",
+  "description": "",
   "author": "Phil Snow",
   "private": true,
   "scripts": {
@@ -13,14 +13,11 @@
   },
   "dependencies": {
     "@nuxtjs/prismic": "^1.1.1",
-    "bootstrap-vue": "^2.4.2",
+    "bootstrap-vue": "^2.10.1",
     "cookies": "^0.7.3",
     "cross-env": "^5.2.1",
     "express": "^4.17.1",
-    "nuxt": "^2.12.1",
-    "prismic-dom": "^2.1.0",
-    "prismic-javascript": "^2.1.5",
-    "prismic-vue": "git+https://github.com/prismicio/prismic-vue.git#nuxt",
+    "nuxt": "^2.12.2",
     "vue-gallery": "^2.0.1",
     "vue-good-table": "^2.19.1",
     "vue-parallax-js": "^0.2.3",
@@ -33,6 +30,6 @@
     "node-sass": "^4.13.1",
     "nodemon": "^1.19.4",
     "sass-loader": "^7.3.1",
-    "webpack": "^4.41.5"
+    "webpack": "^4.42.1"
   }
 }

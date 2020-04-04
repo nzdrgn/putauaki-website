@@ -114,8 +114,7 @@
 </template>
 
 <script>
-import Prismic from "prismic-javascript"
-import PrismicConfig from "~/prismic.config.js"
+
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import PageTitle from '~/components/PageTitle.vue'
 
@@ -130,25 +129,20 @@ export default {
         titleTemplate: '%s - ' + "Contact Us"
     }
   },
-  async asyncData({context, error, req}) {
+  async asyncData({ $prismic, error }) {
     try{
-      // Query to get API object
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {req})
+      // Query to get the home page content
+      const pageContent = (await $prismic.api.getSingle('contact_us')).data
 
-      // Query to get blog home content
-      const document = await api.getSingle('contact_us')
-      let pageContent = document.data
-      
+            
       const position = { "lat": pageContent.location.latitude, "lng": pageContent.location.longitude }
 
-      // Load the edit button
-      if (process.client) window.prismic.setupEditButton()
+     
 
       // Returns data to be used in template
       return {
         pageContent,
-        documentId: document.id,
-        slices: document.data.body,
+        slices: pageContent.body,
         position
         
       }

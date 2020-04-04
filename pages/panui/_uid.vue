@@ -1,14 +1,13 @@
 <template>
  <div>
- <PageTitle :title="document.title" :description="document.description" :imageurl="document.image.url"></PageTitle>
+ <PageTitle :title="post.title" :description="post.description" :imageurl="post.image.url"></PageTitle>
     <!-- Slice Block Componenet tag -->
     <slices-block :slices="slices"/>
   </div>
 </template>
 
 <script>
-import Prismic from "prismic-javascript"
-import PrismicConfig from "~/prismic.config.js"
+
 import PageTitle from '~/components/PageTitle.vue'
 //Importing all the slices components
 import SlicesBlock from '~/components/SlicesBlock.vue'
@@ -24,31 +23,25 @@ export default {
         titleTemplate: '%s - ' + "Panui"
     }
   },
-  async asyncData({ params, error, req }) {
+  async asyncData({ $prismic, params, error }) {
     try{
-      // Query to get API object
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {req})
 
       // Query to get post content
-      const post = await api.getByUID("panui", params.uid)
+      const post = (await $prismic.api.getByUID('panui', params.uid)).data
+      console.log(post)
 
-
-
-      // Load the edit button
-      if (process.client) window.prismic.setupEditButton()
 
       // Returns data to be used in template
       return {
-        document: post.data,
-        documentId: post.id,
-        slices: post.data.body,
-        formattedDate: Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(post.data.date)),
+        post,
+        slices: post.body,
+        formattedDate: Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(post.date)),
       }
     } catch (e) {
       // Returns error page
+      console.log(e)
       error({ statusCode: 404, message: 'Page not found' })
     }
-  },
-
+  }
 }
 </script>

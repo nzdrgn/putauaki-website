@@ -8,8 +8,8 @@
     <div class="container">
       <div class="row justify-content-center text-center min-vh-50 align-items-center">
         <div class="col-xl-8 col-lg-9 col-md-10">
-          <h4 class="display-4">{{$prismic.richTextAsPlain(title)}}</h4>
-          <p class="lead">{{$prismic.richTextAsPlain(caption)}}</p>
+          <h4 class="display-4">{{$prismic.asText(title)}}</h4>
+          <p class="lead">{{$prismic.asText(caption)}}</p>
         </div>
       </div>
     </div>

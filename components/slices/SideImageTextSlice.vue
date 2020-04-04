@@ -12,9 +12,9 @@
           <div   class="col-md-7 col-xl-6">
             <div class="row justify-content-center">
               <div class="col-xl-10 col-lg-10">
-                <span class="badge badge-primary">{{$prismic.richTextAsPlain(badge)}}</span>
+                <span class="badge badge-primary">{{$prismic.asText(badge)}}</span>
                 <div class="my-3">
-                  <span class="h1">{{$prismic.richTextAsPlain(heading)}}</span>
+                  <span class="h1">{{$prismic.asText(heading)}}</span>
                 </div>
                 <prismic-rich-text class="lead" :field="text"/> 
               </div>
@@ -28,9 +28,9 @@
           <div   class="col-md-7 col-xl-6">
             <div class="row justify-content-center">
               <div class="col-xl-10 col-lg-10">
-                <span class="badge badge-primary">{{$prismic.richTextAsPlain(badge)}}</span>
+                <span class="badge badge-primary">{{$prismic.asText(badge)}}</span>
                 <div class="my-3">
-                  <span class="h1">{{$prismic.richTextAsPlain(heading)}}</span>
+                  <span class="h1">{{$prismic.asText(heading)}}</span>
                 </div>
                 <prismic-rich-text class="lead" :field="text"/> 
               </div>
