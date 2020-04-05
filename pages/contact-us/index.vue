@@ -147,7 +147,7 @@ export default {
         
       }
     } catch (e) {
-      console.log(e)
+
       // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
     }

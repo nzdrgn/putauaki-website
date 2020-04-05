@@ -67,8 +67,8 @@ export default function (doc) {
     return '/shareholder-information'
   }
 
-  if (doc.type === 'shareholder_registry') {
-    return '/shareholder-registry'
+  if (doc.type === 'shareholder_register') {
+    return '/shareholder-register'
   }
 
   if (doc.type === 'sharemarket') {

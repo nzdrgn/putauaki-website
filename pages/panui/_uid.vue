@@ -28,7 +28,7 @@ export default {
 
       // Query to get post content
       const post = (await $prismic.api.getByUID('panui', params.uid)).data
-      console.log(post)
+   
 
 
       // Returns data to be used in template
@@ -39,7 +39,7 @@ export default {
       }
     } catch (e) {
       // Returns error page
-      console.log(e)
+    
       error({ statusCode: 404, message: 'Page not found' })
     }
   }

@@ -1,8 +1,23 @@
 <template>
 <div>
     <PageTitle :title="pageContent.title" :description="pageContent.description" :imageurl="pageContent.header_image.url"></PageTitle>
-     <!-- Slices block component -->
-    <slices-block :slices="slices"/>
+
+<section class="pt-0 pb-4">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col">
+            <ul class="d-flex flex-wrap justify-content-center list-unstyled">
+              <li class="mx-xl-4 mx-3 mb-5" v-for="item in pageContent.links" :key="item.id">
+                <a :href="item.link.url">
+                  <img class="" :src="item.image.url" alt="Image" height="80" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> 
+
 </div>
 </template>
 
@@ -19,7 +34,7 @@ export default {
   },
   head () {
     return {
-        titleTemplate: '%s - ' + "About Us"
+        titleTemplate: '%s - ' + "Links"
     }
   },
   async asyncData({ $prismic, error }) {
