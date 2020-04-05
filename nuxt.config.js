@@ -43,7 +43,8 @@ module.exports = {
 
     '~/plugins/vue-gallery.client.js',
     '~/plugins/google-maps',
-    '~/plugins/vue-good-table' 
+    '~/plugins/vue-good-table',
+    '~/plugins/vue-mailchimp-subscribe'  
   ],
 
   /*

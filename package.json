@@ -20,6 +20,7 @@
     "nuxt": "^2.12.2",
     "vue-gallery": "^2.0.1",
     "vue-good-table": "^2.19.1",
+    "vue-mailchimp-subscribe": "^1.1.0",
     "vue-parallax-js": "^0.2.3",
     "vue-parallaxy": "^1.1.1",
     "vue-scrollmonitor": "^0.1.0",
