@@ -12,7 +12,22 @@
       "config" : {
         "single" : "heading1",
         "label" : "Title",
-        "placeholder" : "Blog Post Title..."
+        "placeholder" : "Title..."
+      }
+    },
+    "description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Description"
+      }
+    },
+    "image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "image"
       }
     },
     "date" : {
@@ -44,7 +59,7 @@
               "text" : {
                 "type" : "StructuredText",
                 "config" : {
-                  "multi" : "paragraph, preformatted, heading2, heading3, strong, em, hyperlink, embed, list-item, o-list-item",
+                  "multi" : "paragraph, preformatted, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, o-list-item",
                   "label" : "Text",
                   "placeholder" : "Post text..."
                 }

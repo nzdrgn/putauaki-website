@@ -1,0 +1,75 @@
+{
+  "Main" : {
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Title",
+        "placeholder" : "Page Title"
+      }
+    },
+    "description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "Description",
+        "placeholder" : "Page description"
+      }
+    },
+    "header_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 1920,
+          "height" : 1080
+        },
+        "thumbnails" : [ ],
+        "label" : "Header Image"
+      }
+    },
+    "introduction" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "label" : "Introduction",
+        "placeholder" : "Introduction text to table below"
+      }
+    },
+    "register" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "number" : {
+            "type" : "Number",
+            "config" : {
+              "label" : "Number",
+              "placeholder" : "No..."
+            }
+          },
+          "first_name" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "First Name",
+              "placeholder" : "First Name..."
+            }
+          },
+          "surname" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Surname",
+              "placeholder" : "Surname...."
+            }
+          },
+          "shares" : {
+            "type" : "Number",
+            "config" : {
+              "label" : "Shares",
+              "placeholder" : "Shares...."
+            }
+          }
+        },
+        "label" : "Register"
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+    "Main" : {
+      "title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1",
+          "label" : "Title",
+          "placeholder" : "Page Title"
+        }
+      },
+      "description" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph",
+          "label" : "Description",
+          "placeholder" : "Page description"
+        }
+      },
+      "header_image" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : 1920,
+            "height" : 1080
+          },
+          "thumbnails" : [ ],
+          "label" : "Header Image"
+        }
+      },
+      "reports" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "report_title" : {
+              "type" : "StructuredText",
+              "config" : {
+                "single" : "heading3",
+                "label" : "Report Title",
+                "placeholder" : "Report Title..."
+              }
+            },
+            "report_pdf" : {
+              "type" : "Link",
+              "config" : {
+                "select" : "media",
+                "label" : "Report PDF",
+                "placeholder" : "PDF FIle..."
+              }
+            },
+            "report_ebook" : {
+              "type" : "Link",
+              "config" : {
+                "label" : "Report EBook",
+                "placeholder" : "Ebook Link..."
+              }
+            }
+          },
+          "label" : "Reports"
+        }
+      }
+    }
+  }

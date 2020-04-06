@@ -1,0 +1,282 @@
+{
+    "Main" : {
+      "title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1",
+          "label" : "Title",
+          "placeholder" : "Page Title"
+        }
+      },
+      "description" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph",
+          "label" : "Description",
+          "placeholder" : "Page description"
+        }
+      },
+      "header_image" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : 1920,
+            "height" : 1080
+          },
+          "thumbnails" : [ ],
+          "label" : "Header Image"
+        }
+      },
+      "body" : {
+        "type" : "Slices",
+        "fieldset" : "Slice zone",
+        "config" : {
+          "labels" : {
+            "side_image_text" : [ ],
+            "icon_items_list" : [ ],
+            "photo_gallery" : [ ]
+          },
+          "choices" : {
+            "photo_gallery" : {
+              "type" : "Slice",
+              "fieldset" : "Photo Gallery",
+              "description" : "A gallery of images",
+              "icon" : "filter",
+              "display" : "grid",
+              "non-repeat" : {
+                "gallery_title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading2",
+                    "label" : "Gallery Title",
+                    "placeholder" : "Title"
+                  }
+                }
+              },
+              "repeat" : {
+                "gallery_image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "Gallery Image"
+                  }
+                }
+              }
+            },
+            "basic_cards" : {
+              "type" : "Slice",
+              "fieldset" : "Basic Cards",
+              "description" : "Section with multiple basic cards",
+              "icon" : "web_asset",
+              "display" : "grid",
+              "non-repeat" : { },
+              "repeat" : {
+                "card_image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "Card Image"
+                  }
+                },
+                "card_title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading3",
+                    "label" : "Card Title",
+                    "placeholder" : "Title"
+                  }
+                },
+                "card_text" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "strong, em",
+                    "label" : "card_text",
+                    "placeholder" : "Text"
+                  }
+                },
+                "card_link" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "card_link",
+                    "placeholder" : "Link"
+                  }
+                }
+              }
+            },
+            "icon_items_list" : {
+              "type" : "Slice",
+              "fieldset" : "Icon Items List",
+              "description" : "A list of items with icon",
+              "icon" : "view_module",
+              "display" : "grid",
+              "non-repeat" : {
+                "item_title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading2",
+                    "label" : "Item Title",
+                    "placeholder" : "Title"
+                  }
+                }
+              },
+              "repeat" : {
+                "icon" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "icon"
+                  }
+                },
+                "item_title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading5",
+                    "label" : "Item Title",
+                    "placeholder" : "Title"
+                  }
+                },
+                "text" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, strong, em",
+                    "label" : "Text",
+                    "placeholder" : "Text"
+                  }
+                }
+              }
+            },
+            "image_with_caption" : {
+              "type" : "Slice",
+              "fieldset" : "Image with caption",
+              "description" : "Image with caption and button",
+              "icon" : "chrome_reader_mode",
+              "non-repeat" : {
+                "image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : {
+                      "width" : null,
+                      "height" : null
+                    },
+                    "thumbnails" : [ ],
+                    "label" : "Image"
+                  }
+                },
+                "title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "heading2",
+                    "label" : "Title",
+                    "placeholder" : "My title of caption"
+                  }
+                },
+                "description" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph",
+                    "label" : "Description",
+                    "placeholder" : "My description"
+                  }
+                },
+                "button_label" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                    "label" : "Button label",
+                    "placeholder" : "Click Here"
+                  }
+                },
+                "button_link" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "Button Link",
+                    "placeholder" : "Select the link"
+                  }
+                }
+              },
+              "repeat" : { },
+              "display" : "list"
+            },
+            "side_image_cards" : {
+              "type" : "Slice",
+              "fieldset" : "Side Image Cards",
+              "description" : "Cards with left side image",
+              "icon" : "featured_video",
+              "display" : "grid",
+              "non-repeat" : { },
+              "repeat" : {
+                "item_image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "Item Image"
+                  }
+                },
+                "item_title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading3",
+                    "label" : "Item Title"
+                  }
+                },
+                "item_text" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "strong, em, hyperlink",
+                    "label" : "Item Text"
+                  }
+                }
+              }
+            },
+            "side_image_text" : {
+              "type" : "Slice",
+              "fieldset" : "Side Image Text",
+              "description" : "Featured image next to text ",
+              "icon" : "chrome_reader_mode",
+              "display" : "grid",
+              "non-repeat" : {
+                "badge" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading6",
+                    "label" : "badge",
+                    "placeholder" : "Badge text"
+                  }
+                },
+                "heading" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading1",
+                    "label" : "Heading",
+                    "placeholder" : "Heading"
+                  }
+                },
+                "text" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                    "label" : "Text",
+                    "placeholder" : "Text"
+                  }
+                },
+                "image_orientation" : {
+                  "type" : "Boolean",
+                  "config" : {
+                    "placeholder_false" : "Left",
+                    "placeholder_true" : "Right",
+                    "default_value" : false,
+                    "label" : "Image Orientation"
+                  }
+                }
+              },
+              "repeat" : { }
+            }
+          }
+        }
+      }
+    }
+  }

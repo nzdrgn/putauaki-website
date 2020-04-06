@@ -83,6 +83,14 @@ export default function (doc) {
     return '/trustees'
   }
 
+  if (doc.type === 'kiwifruit') {
+    return '/kiwifruit'
+  }
+
+  if (doc.type === 'industrial_zone') {
+    return '/industrial-zone'
+  }
+
   if (doc.type === 'panui_home') {
     return '/panui'
   }

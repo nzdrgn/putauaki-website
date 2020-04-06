@@ -13,7 +13,9 @@
                 <p class="flex-grow-1">
                  {{getFirstParagraph(panui)}}
                 </p>
-
+<p>
+  <span class="text-muted">{{formattedDate}}</span> 
+</p>
               </div>
             </div>
           </div>

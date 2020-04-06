@@ -31,6 +31,8 @@
           <b-dropdown-item href="/geothermal">GEOTHERMAL</b-dropdown-item>
           <b-dropdown-item href="/forestry">FORESTRY</b-dropdown-item>
           <b-dropdown-item href="/sharemarket">SHAREMARKET</b-dropdown-item>
+          <b-dropdown-item href="/kiwifruit">KIWIFRUIT</b-dropdown-item>
+          <b-dropdown-item href="/industrial-zone">INDUSTRIAL ZONE</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
 

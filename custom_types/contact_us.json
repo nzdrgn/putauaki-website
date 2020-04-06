@@ -1,0 +1,66 @@
+{
+    "Main" : {
+      "title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading2, heading3, heading4, heading5, heading6",
+          "label" : "Title",
+          "placeholder" : "Page Title"
+        }
+      },
+      "description" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph",
+          "label" : "Description",
+          "placeholder" : "Page description"
+        }
+      },
+      "header_image" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : {
+            "width" : 1920,
+            "height" : 1080
+          },
+          "thumbnails" : [ ],
+          "label" : "Header Image"
+        }
+      },
+      "office_address" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph",
+          "label" : "Office Address",
+          "placeholder" : "Address"
+        }
+      },
+      "email" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "Email",
+          "placeholder" : "Email address..."
+        }
+      },
+      "phone" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "Phone",
+          "placeholder" : "Phone Number..."
+        }
+      },
+      "hours" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "Hours",
+          "placeholder" : "Open hours...."
+        }
+      },
+      "location" : {
+        "type" : "GeoPoint",
+        "config" : {
+          "label" : "location"
+        }
+      }
+    }
+  }
