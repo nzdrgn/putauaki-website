@@ -83,6 +83,10 @@ export default function (doc) {
     return '/trustees'
   }
 
+  if (doc.type === 'panui_home') {
+    return '/panui'
+  }
+
   if (doc.type === 'panui') {
     return '/panui/' + doc.uid
   }
