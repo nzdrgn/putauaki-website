@@ -5,7 +5,7 @@
     data-jarallax
     data-speed="0.2"
   >
-    <img :src="this.imageurl" alt="Image" class="jarallax-img opacity-30" />
+    <img :src="this.imageurl" alt="Image" class="jarallax-img opacity-60" />
     <div class="container py-0 layer-2">
       <div class="row my-3"></div>
       <div class="row my-4 my-md-6">

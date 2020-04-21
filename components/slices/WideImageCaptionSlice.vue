@@ -3,7 +3,7 @@
 <template>
   <section class="bg-primary-3 text-light has-divider jarallax" data-jarallax data-speed="0.2">
 
-      <img :src="img.url" alt="Image" class="jarallax-img opacity-50" />
+      <img :src="img.url" alt="Image" class="jarallax-img opacity-80" />
 
     <div class="container">
       <div class="row justify-content-center text-center min-vh-50 align-items-center">
