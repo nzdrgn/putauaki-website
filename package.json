@@ -18,6 +18,7 @@
     "cross-env": "^5.2.1",
     "express": "^4.17.1",
     "nuxt": "^2.12.2",
+    "vue-flickity": "^1.2.1",
     "vue-gallery": "^2.0.1",
     "vue-good-table": "^2.19.1",
     "vue-mailchimp-subscribe": "^1.1.0",

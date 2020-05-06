@@ -39,6 +39,10 @@
             <template v-else-if="slice.slice_type === 'wide_image_with_caption'">
                 <wide-image-caption-slice :slice="slice"></wide-image-caption-slice>
             </template>
+            <!-- Full Width Slideshow template -->
+            <template v-else-if="slice.slice_type === 'full_width_slideshow'">
+                <full-width-slideshow-slice :slice="slice"></full-width-slideshow-slice>
+            </template>
         </div>
     </div>
 </template>
@@ -54,6 +58,7 @@ const IconItemsListSlice = () => import("../components/slices/IconItemsListSlice
 const SideImageCardsSlice = () => import("../components/slices/SideImageCardsSlice.vue");
 const PhotoGallerySlice = () => import("../components/slices/PhotoGallerySlice.vue");
 const WideImageCaptionSlice = () => import("../components/slices/WideImageCaptionSlice.vue");
+const FullWidthSlideshowSlice = () => import("../components/slices/FullWidthSlideshowSlice.vue");
 
 export default {
   props: ['slices'],
@@ -67,7 +72,8 @@ export default {
     IconItemsListSlice,
     SideImageCardsSlice,
     PhotoGallerySlice,
-    WideImageCaptionSlice
+    WideImageCaptionSlice,
+    FullWidthSlideshowSlice
   },
 }
 </script>

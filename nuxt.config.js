@@ -44,7 +44,8 @@ module.exports = {
     '~/plugins/vue-gallery.client.js',
     '~/plugins/google-maps',
     '~/plugins/vue-good-table',
-    '~/plugins/vue-mailchimp-subscribe'  
+    '~/plugins/vue-mailchimp-subscribe',
+    { src: '~/plugins/vue-flickity.js', ssr: false }  
   ],
 
   /*
