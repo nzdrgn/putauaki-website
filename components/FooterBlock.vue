@@ -90,7 +90,7 @@
                 </g>
               </svg>
               <div class="ml-3">
-                <a href="mailto:pet@putauakitrust.com">pet@putauakitrust.com</a>
+                <a href="mailto:jade@putauakitrust.com">jade@putauakitrust.com</a>
               </div>
             </li>
           </ul>

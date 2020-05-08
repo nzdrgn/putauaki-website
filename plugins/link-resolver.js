@@ -91,6 +91,14 @@ export default function (doc) {
     return '/industrial-zone'
   }
 
+  if (doc.type === 'register') {
+    return '/register'
+  }
+
+  if (doc.type === 'newsletters') {
+    return '/newsletters'
+  }
+
   if (doc.type === 'panui_home') {
     return '/panui'
   }

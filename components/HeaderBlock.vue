@@ -49,7 +49,9 @@
           <b-dropdown-item href="/panui">PANUI</b-dropdown-item>
           <b-dropdown-item href="/gallery">GALLERY</b-dropdown-item>
           <b-dropdown-item href="/reports">REPORTS</b-dropdown-item>
+          <b-dropdown-item href="/newsletters">NEWSLETTERS</b-dropdown-item>
           <b-dropdown-item href="/links">LINKS</b-dropdown-item>
+
         </b-nav-item-dropdown>
       </b-navbar-nav>
 

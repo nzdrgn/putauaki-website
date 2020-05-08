@@ -1,7 +1,7 @@
 <template>
 <div>
     <PageTitle :title="pageContent.title" :description="pageContent.description" :imageurl="pageContent.header_image.url"></PageTitle>
-    <files-table :reports="pageContent.reports" title="Files" ebook="true"></files-table>
+    <files-table :reports="pageContent.reports" title="Newsletters" ebook="false"></files-table>
 </div>
 </template>
 
@@ -20,14 +20,14 @@ export default {
   },
   head () {
     return {
-        titleTemplate: '%s - ' + "Reports"
+        titleTemplate: '%s - ' + "Newsletters"
     }
   },
   async asyncData({ $prismic, error }) {
     try{
 
       // Query to get the home page content
-      const pageContent = (await $prismic.api.getSingle('reports')).data
+      const pageContent = (await $prismic.api.getSingle('newsletters')).data
 
       
       // Returns data to be used in template
