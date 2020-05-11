@@ -35,12 +35,10 @@ export default function (doc) {
     return '/geothermal'
   }
 
-  if (doc.type === 'grants') {
-    return '/grants'
-  }
+
 
   if (doc.type === 'himiona_dairy_farm') {
-    return '/himiona-dairy-farm'
+    return '/himiona-dary-farm'
   }
 
   if (doc.type === 'links') {
@@ -106,6 +104,15 @@ export default function (doc) {
   if (doc.type === 'panui') {
     return '/panui/' + doc.uid
   }
+
+  if (doc.type === 'grants') {
+    return '/grants'
+  }
+
+  if (doc.type === 'grant') {
+    return '/grants/' + doc.uid
+  }
+
 
   return '/not-found'
 }
