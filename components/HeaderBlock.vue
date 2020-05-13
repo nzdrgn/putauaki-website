@@ -1,6 +1,6 @@
 <template>
     <div>
-  <b-navbar toggleable="lg"  class="bg-primary-alt pt-1 pb-1" fixed="top" variant="transparent" type="dark" id="nav" >
+  <b-navbar toggleable="lg"  class="bg-primary-alt pt-1 pb-1" fixed="top" variant="transparent" type="dark" id="nav">
     <b-navbar-brand href="/" class="ml-2">
       <img src="~/assets/img/logos/logo-putauaki-white.png" alt="Putauaki Trust" height="60" id="logo-white">      
       <img src="~/assets/img/logos/logo-putauaki.png" alt="Putauaki Trust" height="60" id="logo-blue" class="d-none"> 
@@ -160,4 +160,14 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+body {
+  padding: 1rem;
+}
+
+.lang-dropdown .dropdown-menu {
+   min-width: 4rem;
+}
+</style>
 

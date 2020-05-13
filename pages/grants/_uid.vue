@@ -18,7 +18,8 @@
 
             <h2 v-if="GrantStatus == 'Available'" class="mt-5">Grant Form</h2>
 
-            <prismic-embed v-if="GrantStatus == 'Available'" :field="grant.form_url"/>
+            <iframe v-if="GrantStatus == 'Available'" :src="grant.form.url" style="position:relative;width:1px;min-width:100%;*width:100%;" frameborder="0" scrolling="yes" seamless="seamless" height="1202" width="100%"></iframe>
+            <script v-if="GrantStatus == 'Available'" src="https://www.cognitoforms.com/scripts/embed.js"></script>
 
            </div>
         </div>
@@ -68,7 +69,6 @@ export default {
         }
       }
 
-      console.log();
 
       // Returns data to be used in template
       return {
