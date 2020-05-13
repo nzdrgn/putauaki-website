@@ -6,7 +6,7 @@
       <img src="~/assets/img/logos/logo-putauaki.png" alt="Putauaki Trust" height="60" id="logo-blue" class="d-none"> 
     </b-navbar-brand>
 
-    <b-navbar-toggle target="nav-collapse" v-on:click="navbg"></b-navbar-toggle>
+    <b-navbar-toggle target="nav-collapse" v-on:click="navbg" class="pr-5"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav variant="light"> 
       <b-navbar-nav>
