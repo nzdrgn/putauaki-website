@@ -97,86 +97,29 @@
         </div>
         <div class="col-lg-5 col-xl-4 mt-3 mt-lg-0">
           <h5>Subscribe</h5>
-          <p>The latest Leap news, articles, and resources, sent straight to your inbox every month.</p>
-          <form action="/forms/mailchimp.php" data-form-email novalidate>
-            <div class="form-row">
-              <div class="col-12">
-                <input
-                  type="email"
-                  class="form-control mb-2"
-                  placeholder="Email Address"
-                  name="email"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <div
-                  class="d-none alert alert-success"
-                  role="alert"
-                  data-success-message
-                >Thanks, a member of our team will be in touch shortly.</div>
-                <div
-                  class="d-none alert alert-danger"
-                  role="alert"
-                  data-error-message
-                >Please fill all fields correctly.</div>
-                <div
-                  data-recaptcha
-                  data-sitekey="INSERT_YOUR_RECAPTCHA_V2_SITEKEY_HERE"
-                  data-size="invisible"
-                  data-badge="bottomleft"
-                >
-                  <div
-                    class="grecaptcha-badge"
-                    data-style="bottomleft"
-                    style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"
-                  >
-                    
-                    <div class="grecaptcha-error"></div>
-                    <textarea
-                      id="g-recaptcha-response"
-                      name="g-recaptcha-response"
-                      class="g-recaptcha-response"
-                      style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"
-                    ></textarea>
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-loading btn-block"
-                  data-loading-text="Sending"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    version="1.1"
-                    class="injected-svg icon"
-                    data-src="assets/img/icons/theme/code/loading.svg"
-                  >
-                    <title>Icon For Loading</title>
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <g>
-                        <polygon points="0 0 24 0 24 24 0 24" opacity="0" />
-                      </g>
-                      <path
-                        d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z"
-                        fill="#000000"
-                        fill-rule="nonzero"
-                        transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "
-                      />
-                    </g>
-                  </svg>
-                  <span>Subscribe</span>
-                </button>
-              </div>
-            </div>
-          </form>
+          <p>The latest Putauaki Trust news, articles, and resources, sent straight to your inbox every month.</p>
+
+  <mailchimp-subscribe
+    url="https://putauakitrust.us18.list-manage.com/subscribe/post-json"
+    user-id="f70bfccf6f7a374ca1a42e90b"
+    list-id="5cd59a32da"
+    @error="onError"
+    @success="onSuccess"
+  >
+    <template v-slot="{ subscribe, setEmail, error, success, loading }">
+      <form @submit.prevent="subscribe">
+        <input type="email" @input="setEmail($event.target.value)" class="form-control" placeholder="Email" />
+        <button type="submit" class="m-1 btn btn-primary">Subscribe</button>
+        <div v-if="error">{{ error }}</div>
+        <div v-if="success">You have subscribed successfully thanks!</div>
+        <div v-if="loading">Submitting please wait…</div>
+      </form>
+    </template>
+  </mailchimp-subscribe>
+
           <small class="text-muted form-text">
             We’ll never share your details. See our
-            <a href="#">Privacy Policy</a>
+            <a href="/privacy">Privacy Policy</a>
           </small>
         </div>
       </div>
@@ -186,9 +129,9 @@
           <small class="text-muted">
             © 2020 This page is protected by Copyright and is subject to
             <a
-              href="https://www.google.com/policies/privacy/"
-            >Privacy Policy</a> and
-            <a href="https://policies.google.com/terms">Terms of Service.</a>
+              href="/privacy"
+            >Privacy Policy</a>
+            
           </small>
         </div>
       </div>
@@ -197,9 +140,21 @@
 </template>
 
 <script>
+import MailchimpSubscribe from 'vue-mailchimp-subscribe'
+
 export default {
-  name: "FooterBlock"
-  
+  name: "FooterBlock",
+    components: {
+    MailchimpSubscribe,
+  },
+  methods: {
+    onError() {
+      // handle error
+    },
+    onSuccess() {
+      // handle success
+    },
+  }  
 };
 </script>
 
