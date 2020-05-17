@@ -1,10 +1,6 @@
 <template>
 <div>
     <PageTitle :title="pageContent.title" :description="pageContent.description" :imageurl="pageContent.header_image.url"></PageTitle>
-    <!-- Embeded Timeline -->
-    <section>
-      <iframe frameborder="0" height="650" src="https://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=1Wep72puF5nZrWs5GNzXcHTwNlcCYKgoS_hIW3j_dd2A&amp;font=Bevan-PotanoSans&amp;maptype=toner&amp;lang=en&amp;height=650" width="100%"></iframe>
-     </section>
      <!-- Slices block component -->
     <slices-block :slices="slices"/>
 </div>
