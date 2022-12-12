@@ -16,7 +16,7 @@
     "bootstrap-vue": "^2.10.1",
     "cookies": "^0.7.3",
     "cross-env": "^5.2.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nuxt": "^2.12.2",
     "vue-flickity": "^1.2.1",
     "vue-gallery": "^2.0.1",
