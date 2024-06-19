@@ -37,10 +37,8 @@
               </svg>
               <div class="ml-3">
                 <span>
-                  MIL House
-                  <br />Waterhouse Street Extn.
-                  <br/>PO Box 99
-                  <br/>Kawerau
+      2 Tamaoho Drive
+                  <br/>Kawerau 3192
                 </span>
               </div>
             </li>
